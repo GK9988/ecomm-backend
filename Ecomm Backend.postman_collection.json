@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "3d5718a7-3c22-4be7-a3ca-e8521ec2cc0b",
+		"name": "Ecomm Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37251105"
+	},
+	"item": [
+		{
+			"name": "USER-SERVICE",
+			"item": [
+				{
+					"name": "Create a New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"garvk2\",\r\n    \"userPassword\": \"testPassword\",\r\n    \"userType\": \"CONSUMER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/3",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"userName\": \"garvk2\",\r\n    \"userPassword\": \"testPassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/3",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"garvk0\",\r\n    \"password\": \"testPassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/validate",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is User a Owner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/1/isOwner",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								"1",
+								"isOwner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is User a Consumer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{USER-SERVICE-URI}}/2/isConsumer",
+							"host": [
+								"{{USER-SERVICE-URI}}"
+							],
+							"path": [
+								"2",
+								"isConsumer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "USER-SERVICE-URI",
+			"value": "http://localhost:4010",
+			"type": "string"
+		}
+	]
+}
