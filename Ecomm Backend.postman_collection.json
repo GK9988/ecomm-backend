@@ -161,6 +161,136 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "PAYMENT-SERVICE",
+			"item": [
+				{
+					"name": "Credentials",
+					"item": [
+						{
+							"name": "Add a New Payment Cred",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payId\": 1234567890,\r\n    \"payPin\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/cred/",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"cred",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment Creds",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/cred/1",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"cred",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Payment Creds",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payId\": 1234567890,\r\n    \"payPin\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/cred/",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"cred",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/cred/2",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"cred",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Credentials",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payId\": 1234567890,\r\n    \"payPin\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/cred/validate",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"cred",
+										"validate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
 		}
 	],
 	"event": [
@@ -189,6 +319,11 @@
 		{
 			"key": "USER-SERVICE-URI",
 			"value": "http://localhost:4010",
+			"type": "string"
+		},
+		{
+			"key": "PAYMENT-SERVICE-URI",
+			"value": "http://localhost:4020",
 			"type": "string"
 		}
 	]
