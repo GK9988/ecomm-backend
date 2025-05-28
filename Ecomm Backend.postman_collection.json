@@ -289,6 +289,111 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Payment Record",
+					"item": [
+						{
+							"name": "Create a Payment Record",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": 5,\r\n    \"userName\": \"garvk0\",\r\n    \"paymentAmount\": 1000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/1",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment By Order Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/?orderId=2",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "orderId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Record By id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/4",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Record By Order Id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{PAYMENT-SERVICE-URI}}/4",
+									"host": [
+										"{{PAYMENT-SERVICE-URI}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
